@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
@@ -8,8 +8,18 @@ type Props = {}
 
 const Header = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState(false)
+  if (typeof window !== 'undefined') {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        setActive(true)
+      } else {
+        setActive(false)
+      }
+    })
+  }
   return (
-    <header className=" border-b border-[#80808083] text-white py-4 px-6 shadow-md">
+    <header className={`${active&& "fixed top-0 left-0 bg-[#000] z-[9999] w-full"} border-b  border-[#80808083] text-white py-4 px-6 shadow-md`}>
     <div className="max-w-7xl mx-auto flex justify-between items-center">
       {/* Logo and Name */}
       <Link href="/" className="text-xl font-bold flex items-center">

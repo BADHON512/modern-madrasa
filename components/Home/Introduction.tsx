@@ -23,11 +23,11 @@ const Introduction = (props: Props) => {
 
     return (
         <div className="w-[90%] max-w-7xl mx-auto bg-white mt-20 shadow-lg rounded-lg overflow-hidden">
-            <div className="flex flex-col md:flex-row gap-5 p-5 items-center">
+            <div className="flex flex-col md:flex-row gap-5 p-5 ">
                 {/* Image Section */}
                 <div className="w-full md:w-1/2">
                     <Image
-                        src="https://res.cloudinary.com/dfng3w9jm/image/upload/v1741551140/1d73d5a7-9706-4b24-9e35-8391b3777597_bqefai.webp"
+                        src="https://res.cloudinary.com/dfng3w9jm/image/upload/v1741719327/482410565_2287225808339186_1109085491186225578_n_btrtwr.jpg"
                         alt="image not found"
                         width={1000}
                         height={1000}
@@ -50,7 +50,7 @@ const Introduction = (props: Props) => {
                 </div>
             </div>
 
-            <div className="w-full my-5">
+            <div className="w-full my-20">
                 <div className="flex flex-wrap gap-5 justify-center g">
                     <div className="w-[90%] md:w-[400px] border border-gray-300">
                         <div className="flex justify-center items-center gap-y-3 flex-col p-3">
