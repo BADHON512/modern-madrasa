@@ -21,8 +21,8 @@ const Gallery = (props: Props) => {
     {src:"https://res.cloudinary.com/dfng3w9jm/image/upload/v1741720915/483110388_1193659099085422_1370227252492844354_n_ypy3rw.jpg"},
     {src:"https://res.cloudinary.com/dfng3w9jm/image/upload/v1741720958/482822713_2723695937837660_2027751559584380353_n_uvxqod.jpg"},
     {src:"https://res.cloudinary.com/dfng3w9jm/image/upload/v1741721143/471958221_590968237207757_5034959359786926159_n_potjdc.jpg"},
-    // {src:""},
-    // {src:""},
+    {src:"https://res.cloudinary.com/dfng3w9jm/image/upload/v1741757778/483160267_1147905189931986_4967088359474059153_n_vsvxc0.jpg"},
+    {src:"https://res.cloudinary.com/dfng3w9jm/image/upload/v1741758331/483022758_665352369482834_2757208016287329429_n_egpqqb.jpg"},
     // {src:""},
     // {src:""},
   ];
@@ -32,12 +32,12 @@ const Gallery = (props: Props) => {
 
   return (
     <div className="max-w-7xl mx-auto my-20">
-      <h1 className="bg-orange-400 py-2 px-3 font-semibold text-gray-600">আমাদের গ্যালারি</h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-2 w-full mt-3">
+      <h1 className="bg-blue-500 py-2 px-3 font-semibold text-gray-100 rounded-sm">আমাদের গ্যালারি</h1>
+      <div className="columns-3 md:columns-4 gap-2 p-2 w-full mx-auto mt-3">
         {images.map((image, i) => (
           <div
             key={i}
-            className="relative mb-2 cursor-pointer"
+            className="relative mb-2 cursor-pointer break-inside-avoid"
             onClick={() => {
               setIndex(i);
               setOpen(true);
@@ -46,10 +46,10 @@ const Gallery = (props: Props) => {
             <Image
               src={image.src}
               alt={`Gallery image ${i + 1}`}
-              width={1000}
+              width={400}
               height={1000}
               layout="responsive"
-              className="w-[400px] h-[450px] rounded-lg  hover:opacity-75 transition duration-300"
+              className="w-full h-auto rounded-lg object-cover cursor-pointer hover:opacity-75 transition duration-300"
             />
           </div>
         ))}

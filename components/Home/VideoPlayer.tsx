@@ -8,7 +8,7 @@ type Props = {};
 
 const VideoPlayer = (props: Props) => {
     const videos = [
-        "https://res.cloudinary.com/dfng3w9jm/video/upload/v1741713230/Snapsave.app_-IqpLWsHOmbMAKhyUAAt4DM_qlwsoy.mp4",
+        "https://res.cloudinary.com/dfng3w9jm/video/upload/v1741846929/Snapsave.app_-GPl_gsc6kv.mp4",
         "https://res.cloudinary.com/dfng3w9jm/video/upload/v1741713230/484140834_29591524293779677_8439933459747333002_n_p3656l.mp4",
         "https://res.cloudinary.com/dfng3w9jm/video/upload/v1741713228/483760628_8499481046820959_1101870668282696666_n_kcg0pn.mp4",
         "https://res.cloudinary.com/dfng3w9jm/video/upload/v1741713228/483351465_9101839493218412_8682514123200467906_n_d6hehx.mp4",
@@ -19,7 +19,7 @@ const VideoPlayer = (props: Props) => {
 
     return (
         <div className="max-w-7xl mx-auto my-20">
-            <h1 className="bg-orange-400 py-2 px-3 font-semibold text-black">ভিডিও গ্যালারি</h1>
+            <h1 className="bg-blue-500 py-2 px-3 font-semibold text-gray-100 rounded-sm">ভিডিও গ্যালারি</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4">
                 {videos.map((video, index) => (
                     <div
