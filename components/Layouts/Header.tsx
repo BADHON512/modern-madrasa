@@ -36,7 +36,7 @@ const Header = (props: Props) => {
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden lg:flex space-x-6">
           <Link href="/" className="hover:text-gray-300">হোম</Link>
           <Link href="/about" className="hover:text-gray-300">আমাদের সম্পর্কে</Link>
           <Link href="/academic" className="hover:text-gray-300">একাডেমিক তথ্য</Link>
@@ -59,7 +59,7 @@ const Header = (props: Props) => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden  text-white p-4 space-y-3">
+        <div className="lg:hidden  text-white p-4 space-y-3">
           <Link href="/" className="block">হোম</Link>
           <Link href="/about" className="block">আমাদের সম্পর্কে</Link>
           <Link href="/academic" className="block">একাডেমিক তথ্য</Link>
@@ -67,7 +67,7 @@ const Header = (props: Props) => {
           <Link href="/admission" className="block">ভর্তি</Link>
           <Link href="/contact" className="block">যোগাযোগ</Link>
           <Link href="/notice" className="hover:text-red-600 font-bold text-red-400">নোটিশ </Link>
-          <Link href="/login" className="block bg-white text-blue-600 px-4 py-2 rounded-full text-center">লগইন</Link>
+          <Link href="/login" className="block bg-white text-blue-600 px-4 py-2 rounded-full mt-2 text-center">লগইন</Link>
         </div>
       )}
     </header>
