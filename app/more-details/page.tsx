@@ -15,12 +15,12 @@ const Page = (props: Props) => {
                 {/* Image Section */}
                 <div className="w-full flex justify-center items-center">
                     <Image
-                        src="https://res.cloudinary.com/dfng3w9jm/image/upload/v1741719327/482410565_2287225808339186_1109085491186225578_n_btrtwr.jpg"
+                        src="https://res.cloudinary.com/dfng3w9jm/image/upload/v1741953331/483906271_1618053085486704_4500863366463822881_n_iel1bx.jpg"
                         alt="image not found"
                         width={1200}
                         height={700}
                         layout=''
-                        className="rounded-lg shadow-lg object-cover object-fill  max-h-[500px] w-full"
+                        className="rounded-lg shadow-lg object-contain  max-h-[500px] w-full"
                     />
                 </div>
 

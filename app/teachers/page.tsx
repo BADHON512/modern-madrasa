@@ -9,18 +9,7 @@ const teachers = [
     qualification: 'ইসলামিক স্টাডিজ (ঢাকা বিশ্ববিদ্যালয়)',
     image: 'https://res.cloudinary.com/dfng3w9jm/image/upload/v1741847749/483593369_1036102368327903_8000179895354208126_n_c9rkev.jpg'
   },
-  {
-    name: 'মাওলানা সাইফুল ইসলাম',
-    subject: 'ফিকহ ও ইসলামিক আইন',
-    qualification: 'দারুল উলুম দেওবন্দ',
-    image: 'https://res.cloudinary.com/dfng3w9jm/image/upload/v1739805661/default-avatar-profile-icon-of-social-media-user-vector_ixtvqz.jpg'
-  },
-  {
-    name: 'উস্তাদ মাহমুদুল হাসান',
-    subject: 'আরবি সাহিত্য',
-    qualification: 'মদিনা বিশ্ববিদ্যালয়',
-    image: 'https://res.cloudinary.com/dfng3w9jm/image/upload/v1739805661/default-avatar-profile-icon-of-social-media-user-vector_ixtvqz.jpg'
-  },
+
 
 ];
 
@@ -32,7 +21,7 @@ const TeachersPage = () => {
         <h1 className='text-3xl font-bold text-center text-gray-100 mb-8'>আমাদের শিক্ষকবৃন্দ</h1>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6'>
           {teachers.map((teacher, index) => (
-            <div key={index} className='bg-white shadow-lg rounded-lg p-4 text-center'>
+            <div key={index} className='bg-slate-600 shadow-lg rounded-lg p-4 text-center'>
               <div className='flex justify-center'>
                 <Image
                   src={teacher.image}
@@ -42,9 +31,9 @@ const TeachersPage = () => {
                   className='rounded-full'
                 />
               </div>
-              <h2 className='text-lg text-gray-700 font-semibold mt-4'>{teacher.name}</h2>
-              <p className='text-gray-600'>{teacher.subject}</p>
-              <p className='text-gray-500 text-sm mt-1'>{teacher.qualification}</p>
+              <h2 className='text-lg text-gray-100 font-semibold mt-4'>{teacher.name}</h2>
+              <p className='text-gray-100'>{teacher.subject}</p>
+              <p className='text-gray-100 text-sm mt-1'>{teacher.qualification}</p>
             </div>
           ))}
         </div>

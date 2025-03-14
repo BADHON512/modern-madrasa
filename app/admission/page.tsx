@@ -126,15 +126,17 @@ const AdmissionPage = () => {
             </ul>
             <p className="text-lg text-green-200 text-center mt-8">
               অনলাইন ভর্তি ফর্ম পূরণ করুন অথবা{" "}
-            
+
             </p>
             <a
-                href="/admission-form.pdf"
-                download
-                className="w-full block text-center px-5 py-2 mt-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-md transition duration-300"
-              >
-                ফর্ম ডাউনলোড করুন
-              </a>
+              href="https://res.cloudinary.com/dfng3w9jm/image/upload/fl_attachment/v1741953073/Darul_Ihsan_Cadet_Madrasah_form_i6krfq.jpg"
+              download="Darul_Ihsan_Cadet_Madrasah_form.jpg"
+              className="w-full block text-center px-5 py-2 mt-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-md transition duration-300"
+            >
+              ফর্ম ডাউনলোড করুন
+            </a>
+
+
           </div>
         </div>
       </div>
