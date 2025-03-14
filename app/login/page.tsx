@@ -18,8 +18,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#0a0a0a] text-white px-4">
-      <div className="bg-[#1a1a1a] p-8 rounded-lg shadow-lg w-full max-w-md text-center">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#0a0a0af6] text-white px-4">
+      <div className="bg-gray-900  p-8 rounded-lg shadow-lg w-full max-w-md text-center">
       <p className="text-center text-gray-400 mb-4">
         দারুল ইহসান ক্যাডেট মাদ্রাসা
         </p>

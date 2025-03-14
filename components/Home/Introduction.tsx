@@ -42,7 +42,7 @@ const Introduction = (props: Props) => {
 
                 {/* Text Section */}
                 <div className="w-full md:w-1/2 flex flex-col gap-4">
-                    <h1 className="text-gray-800 text-2xl md:text-3xl font-semibold leading-relaxed">
+                    <h1 className="text-slate-500 text-2xl md:text-3xl font-semibold leading-relaxed">
                     দারুল এহসান ক্যাডেট মাদ্রাসা 
                     </h1>
                     <p className="text-gray-600 text-sm md:text-base leading-6">

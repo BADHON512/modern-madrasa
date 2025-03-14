@@ -30,8 +30,8 @@ export default function SignupPage() {
 
   return (
     <div className="flex items-center flex-col justify-center min-h-screen bg-black text-white">
-      <div className="bg-gray-900 p-8 rounded-lg shadow-lg w-96">
-        <p className="text-center text-gray-400 mb-4">
+      <div className="bg-gray-900 p-8 rounded-lg shadow-lg w-[90%] md:w-[400px]">
+        <p className="text-center text-gray-400 mb-4  lg:text-2xl">
         দারুল ইহসান ক্যাডেট মাদ্রাসা
         </p>
 
@@ -58,7 +58,7 @@ export default function SignupPage() {
           <input
             type="email"
             name="email"
-            placeholder="মোবাইল নম্বর বা ইমেইল"
+            placeholder="আপনার ইমেইল দিন"
             className="w-full p-2 bg-gray-800 border border-gray-700 rounded-md"
             onChange={handleChange}
             required

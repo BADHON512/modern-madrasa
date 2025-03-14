@@ -32,7 +32,7 @@ const Header = (props: Props) => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo and Name */}
         <Link href="/" className="text-xl font-bold flex items-center">
-          <Image src={"https://res.cloudinary.com/dfng3w9jm/image/upload/v1741757437/483891980_1033750798673164_202715880075837876_n_x0vm9p.jpg"} height={1000} width={1000} alt='logo not found' className='w-[50px] h-[50px] rounded-full object-cover' />
+          <Image src={"https://res.cloudinary.com/dfng3w9jm/image/upload/v1741757437/483891980_1033750798673164_202715880075837876_n_x0vm9p.jpg"} height={1000} width={1000} alt='logo not found' className='w-[50px] h-[50px] rounded-full object-center' />
         </Link>
 
         {/* Desktop Menu */}
@@ -43,6 +43,7 @@ const Header = (props: Props) => {
           <Link href="/teachers" className="hover:text-gray-300">শিক্ষকবৃন্দ</Link>
           <Link href="/admission" className="hover:text-gray-300">ভর্তি</Link>
           <Link href="/contact" className="hover:text-gray-300">যোগাযোগ</Link>
+          <Link href="/notice" className="hover:text-red-600 font-bold text-red-400">নোটিশ </Link>
         </nav>
 
         {/* Login Button */}
@@ -65,6 +66,7 @@ const Header = (props: Props) => {
           <Link href="/teachers" className="block">শিক্ষকবৃন্দ</Link>
           <Link href="/admission" className="block">ভর্তি</Link>
           <Link href="/contact" className="block">যোগাযোগ</Link>
+          <Link href="/notice" className="hover:text-red-600 font-bold text-red-400">নোটিশ </Link>
           <Link href="/login" className="block bg-white text-blue-600 px-4 py-2 rounded-full text-center">লগইন</Link>
         </div>
       )}

@@ -5,6 +5,7 @@ import Introduction from '@/components/Home/Introduction'
 import VideoPlayer from '@/components/Home/VideoPlayer'
 import Footer from '@/components/Layouts/Footer'
 import Header from '@/components/Layouts/Header'
+import WhyChooseUs from '@/components/WhyChooseUs'
 import React from 'react'
 
 type Props = {}
@@ -15,6 +16,7 @@ const page = (props: Props) => {
       <Header />
       <Hero />
       <Introduction />
+       <WhyChooseUs/>
       <Gallery />
       <VideoPlayer />
       <GoogleMap />
