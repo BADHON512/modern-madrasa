@@ -2,20 +2,31 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { FaFacebook } from "react-icons/fa";
+
 import Image from "next/image";
+import { LoginAdmin } from "@/@backend/admin/loginAdmin";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [form, setForm] = useState({ email: "", password: "" });
-
+  const router = useRouter();
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Add authentication logic
+  const {error,message,success} =await LoginAdmin(form.email,form.password)
+  if(success&&message){
+    toast.success(message)
+    router.push("/admin/dashboard")
+  }
+  if(error){
+    toast.error(error)
+  }
   };
+  
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#0a0a0af6] text-white px-4">
@@ -52,7 +63,7 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md transition duration-300"
+            className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-md transition duration-300 cursor-pointer"
           >
             লগইন করুন
           </button>

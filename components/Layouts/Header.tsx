@@ -5,9 +5,11 @@ import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 
-type Props = {}
+type Props = {
+  LoginUser: any
+}
 
-const Header = (props: Props) => {
+const Header = ({ LoginUser }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState(false)
   useEffect(() => {
@@ -48,7 +50,12 @@ const Header = (props: Props) => {
 
         {/* Login Button */}
         <div className="hidden md:block">
-          <Link href="/login" className="bg-slate-600 text-white border border-[#808080ad] px-4 py-2 rounded-full font-medium ">লগইন</Link>
+          {
+            LoginUser ? (<div className='h-[60px] w-[60px]'>
+              <Link href={LoginUser?.User?.role === "SUPER_ADMIN" ? "/admin/dashboard" : "profile"} >  <Image src={LoginUser?.User?.avatar?.url} height={1000} width={1000} alt='img not found ' className='rounded-full object-cover border border-blue-500 cursor-pointer'></Image></Link>
+
+            </div>) : (<Link href="/login" className="bg-slate-600 text-white border border-[#808080ad] px-4 py-2 rounded-full font-medium ">লগইন</Link>)
+          }
         </div>
 
         {/* Mobile Menu Button */}

@@ -1,31 +1,63 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { MdCloudUpload } from "react-icons/md";
+import Image from "next/image";
+import { SignUpAdmin } from "@/@backend/admin/signUpAdmin";
+import toast from "react-hot-toast";
 
 export default function SignupPage() {
   const router = useRouter();
+
   const [form, setForm] = useState({
     email: "",
     password: "",
     fullName: "",
-    username: "",
-    profilePic: null,
+    avatar: "",
+    role: "",
   });
 
-  const handleChange = (e) => {
-    if (e.target.name === "profilePic") {
-      setForm({ ...form, profilePic: e.target.files[0] });
-    } else {
-      setForm({ ...form, [e.target.name]: e.target.value });
-    }
+  const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+
+    if (!file) return;
+
+    const fileReader = new FileReader();
+
+    fileReader.onload = (event) => {
+      const imageUrl = event.target?.result;
+      setForm({ ...form, avatar: imageUrl as string });
+    };
+
+    fileReader.readAsDataURL(file);
   };
 
+
   const handleSubmit = async (e) => {
+    if(form.role===""){
+      toast.error("Please select a role")
+  
+    }
     e.preventDefault();
-    // এখানে ব্যাকেন্ড API-তে ডাটা পাঠানোর লজিক যোগ করতে হবে
+    console.log(form)
+   const {admin, error,message} = await SignUpAdmin({
+      name: form.fullName,
+      email: form.email,
+      password: form.password,
+      role: form.role,
+      avatar: form.avatar,
+    });
+  if(message){
+    toast.success(message)
+    router.push("/login")
+  }
+  if(error){
+    toast.error(error)
+
+  }
+  console.log(admin)
   };
 
   return (
@@ -46,9 +78,11 @@ export default function SignupPage() {
         <form onSubmit={handleSubmit} className="space-y-3">
 
           <div className=" flex justify-center">
-            {form.profilePic && (
-              <img
-                src={URL.createObjectURL(form.profilePic)}
+            {form.avatar && (
+              <Image
+                height={1000}
+                width={1000}
+                src={form.avatar}
                 alt="Uploaded Preview"
                 className="w-20 h-20 rounded-full object-cover mt-2"
               />
@@ -60,15 +94,16 @@ export default function SignupPage() {
             name="email"
             placeholder="আপনার ইমেইল দিন"
             className="w-full p-2 bg-gray-800 border border-gray-700 rounded-md"
-            onChange={handleChange}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
             required
           />
           <input
             type="password"
             name="password"
             placeholder="পাসওয়ার্ড"
+            autoComplete="true"
             className="w-full p-2 bg-gray-800 border border-gray-700 rounded-md"
-            onChange={handleChange}
+            onChange={(e) => setForm({ ...form, password: e.target.value })}
             required
           />
           <input
@@ -76,16 +111,16 @@ export default function SignupPage() {
             name="fullName"
             placeholder="পূর্ণ নাম"
             className="w-full p-2 bg-gray-800 border border-gray-700 rounded-md"
-            onChange={handleChange}
+            onChange={(e) => setForm({ ...form, fullName: e.target.value })}
             required
           />
           <select
             name="role"
             className="w-full p-2 bg-gray-800 border border-gray-700 rounded-md text-white"
-            onChange={handleChange}
+            onChange={(e) => setForm({ ...form, role: e.target.value })}
             required
           >
-            <option value="" disabled selected>
+            <option value={form.role} disabled selected>
               একটি অপশন নির্বাচন করুন
             </option>
             <option value="student">Student</option>
@@ -102,7 +137,7 @@ export default function SignupPage() {
                 name="profilePic"
                 accept="image/*"
                 className="hidden"
-                onChange={handleChange}
+                onChange={(e) => handleImage(e)}
               />
             </label>
 
@@ -115,7 +150,7 @@ export default function SignupPage() {
           </p>
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 my-5 rounded-md"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 my-5 rounded-md cursor-pointer"
           >
             সাইন আপ করুন
           </button>

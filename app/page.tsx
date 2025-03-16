@@ -1,3 +1,4 @@
+import { GetLoginUser } from '@/@backend/getLoginUser'
 import Hero from '@/components/Hero/Hero'
 import Gallery from '@/components/Home/Gallary'
 import GoogleMap from '@/components/Home/GoogleMap'
@@ -8,12 +9,14 @@ import Header from '@/components/Layouts/Header'
 import WhyChooseUs from '@/components/WhyChooseUs'
 import React from 'react'
 
-type Props = {}
 
-const page = (props: Props) => {
+
+const page = async () => {
+const LoginUser:any= await GetLoginUser()
+
   return (
     <div>
-      <Header />
+      <Header LoginUser={LoginUser} />
       <Hero />
       <Introduction />
        <WhyChooseUs/>
