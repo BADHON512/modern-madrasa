@@ -13,7 +13,10 @@ export async function GetLoginUser() {
       return { message: "Unauthorized", status: 401, success: false };
     }
 
-    const User = await prisma.admin.findUnique({
+    const User = await prisma.user.findUnique({
+        omit:{
+            password:true
+        },
       where: {
         email: user.email,
       },

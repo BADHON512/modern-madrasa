@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { FaFacebook } from "react-icons/fa";
+
 import { MdCloudUpload } from "react-icons/md";
 import Image from "next/image";
 import { SignUpAdmin } from "@/@backend/admin/signUpAdmin";
@@ -42,7 +42,7 @@ export default function SignupPage() {
     }
     e.preventDefault();
     console.log(form)
-   const {admin, error,message} = await SignUpAdmin({
+   const { error,message} = await SignUpAdmin({
       name: form.fullName,
       email: form.email,
       password: form.password,
@@ -57,7 +57,7 @@ export default function SignupPage() {
     toast.error(error)
 
   }
-  console.log(admin)
+
   };
 
   return (
@@ -115,16 +115,16 @@ export default function SignupPage() {
             required
           />
           <select
-            name="role"
+            defaultValue={form.role}
             className="w-full p-2 bg-gray-800 border border-gray-700 rounded-md text-white"
             onChange={(e) => setForm({ ...form, role: e.target.value })}
             required
           >
-            <option value={form.role} disabled selected>
+            <option value="" disabled selected>
               একটি অপশন নির্বাচন করুন
             </option>
             <option value="student">Student</option>
-            <option value="admin">Admin</option>
+            <option value="teacher">Teacher</option>
             <option value="super_admin">Super Admin</option>
           </select>
 

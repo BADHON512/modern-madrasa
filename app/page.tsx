@@ -13,10 +13,10 @@ import React from 'react'
 
 const page = async () => {
 const LoginUser:any= await GetLoginUser()
-
+console.log(LoginUser.User)
   return (
     <div>
-      <Header LoginUser={LoginUser} />
+      <Header LoginUser={LoginUser.User} />
       <Hero />
       <Introduction />
        <WhyChooseUs/>

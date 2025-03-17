@@ -12,17 +12,33 @@ type Props = {
   avatar: string; // This should be a file or base64
 };
 
-export async function SignUpAdmin({ email, password, name, avatar }: Props) {
+export async function SignUpAdmin({
+  email,
+  password,
+  name,
+  role,
+  avatar,
+}: Props) {
   try {
+    if (role === "super_admin") {
+      const existingSuperAdmin = await prisma.user.findFirst({
+        where: { role: "super_admin" },
+      });
 
-  const existAdmin= await prisma.admin.findUnique({
-    where:{
-      email:email
+      if (existingSuperAdmin) {
+        return { message: "Super Admin already exists", statusCode: 400 };
+      }
     }
-  })
-  if(existAdmin){
-    return {message:"Admin already exist", statusCode:400}
-  }
+
+
+    const existAdmin = await prisma.user.findUnique({
+      where: {
+        email: email,
+      },
+    });
+    if (existAdmin) {
+      return { error: "Admin already exist", statusCode: 400 };
+    }
     // 🔹 পাসওয়ার্ড হ্যাশ করা
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -30,21 +46,24 @@ export async function SignUpAdmin({ email, password, name, avatar }: Props) {
     const image = await cloudinary.uploader.upload(avatar, {
       folder: "madrash",
     });
+    const generateRegistrationNumber = () =>
+      Math.floor(10000 + Math.random() * 90000).toString();
 
-    // 🔹 Admin তৈরি করা
-    const admin = await prisma.admin.create({
-        data: {
-          avatar: {
-            url: image.secure_url,
-            public_id: image.public_id,
-          },
-          name,
-          email,
-          password:hashedPassword,
+    const User = await prisma.user.create({
+      data: {
+        avatar: {
+          url: image.secure_url,
+          public_id: image.public_id,
         },
-      });
+        name,
+        email,
+        role,
+        password: hashedPassword,
+        registrationNumber: generateRegistrationNumber(),
+      },
+    });
 
-    return { message: "SignUp successfully", admin };
+    return { message: "SignUp successfully", User };
   } catch (error) {
     console.error("Signup Error:", error);
     return { error: "Internal server error", statusCode: 500 };

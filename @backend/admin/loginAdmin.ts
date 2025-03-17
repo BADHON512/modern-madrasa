@@ -6,7 +6,7 @@ import prisma from "@/lib/prismadb";
 
 export async function LoginAdmin(email: string, password: string) {
   try {
-    const admin = await prisma.admin.findUnique({
+    const admin = await prisma.user.findUnique({
       where: { email: email },
     });
 

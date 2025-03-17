@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
   console.log(data.role);
 
   // 🔹 সুপার অ্যাডমিন না হলে '/admin/dashboard' থেকে হোমপেজে পাঠাবে
-  if (pathname.startsWith("/admin/dashboard") && data.role !== "SUPER_ADMIN") {
+  if (pathname.startsWith("/admin/dashboard") && data.role !== "super_admin") {
     return NextResponse.redirect(new URL("/", request.url));
   }
 
@@ -25,7 +25,7 @@ export function middleware(request: NextRequest) {
 
   // 🔹 লগিন না করা থাকলে শুধু '/login' এবং '/sign-up' পেজে যেতে পারবে
   if (!authToken) {
-    if (pathname.startsWith("/login") || pathname.startsWith("/sign-up")) {
+    if (pathname.startsWith("/login") || pathname.startsWith("/sign-up") || pathname.startsWith("/")) {
       return NextResponse.next();
     }
     return NextResponse.redirect(new URL("/login", request.url)); // রিডাইরেক্ট করবে

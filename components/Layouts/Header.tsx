@@ -52,7 +52,7 @@ const Header = ({ LoginUser }: Props) => {
         <div className="hidden md:block">
           {
             LoginUser ? (<div className='h-[60px] w-[60px]'>
-              <Link href={LoginUser?.User?.role === "SUPER_ADMIN" ? "/admin/dashboard" : "profile"} >  <Image src={LoginUser?.User?.avatar?.url} height={1000} width={1000} alt='img not found ' className='rounded-full object-cover border border-blue-500 cursor-pointer'></Image></Link>
+              <Link href={LoginUser?.role === "super_admin" ? "/admin/dashboard" : "profile"} >  <Image src={LoginUser?.avatar?.url} height={1000} width={1000} alt='img not found ' className='rounded-full object-cover border border-blue-500 cursor-pointer h-[60px] w-[60px]'></Image></Link>
 
             </div>) : (<Link href="/login" className="bg-slate-600 text-white border border-[#808080ad] px-4 py-2 rounded-full font-medium ">লগইন</Link>)
           }
