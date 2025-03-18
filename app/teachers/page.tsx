@@ -1,3 +1,4 @@
+import { GetLoginUser } from '@/@backend/getLoginUser';
 import Footer from '@/components/Layouts/Footer';
 import Header from '@/components/Layouts/Header';
 import Image from 'next/image';
@@ -13,10 +14,11 @@ const teachers = [
 
 ];
 
-const TeachersPage = () => {
+const TeachersPage = async() => {
+  const { User } = await GetLoginUser();
   return (
     <div className="">
-      <Header />
+      <Header LoginUser={User}/>
       <div className='max-w-7xl min-h-[80vh] mx-auto px-5 py-10'>
         <h1 className='text-3xl font-bold text-center text-gray-100 mb-8'>আমাদের শিক্ষকবৃন্দ</h1>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6'>
