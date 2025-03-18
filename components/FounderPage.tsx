@@ -1,14 +1,11 @@
 "use client";
-
-import Footer from "@/components/Layouts/Footer";
-import Header from "@/components/Layouts/Header";
 import Image from "next/image";
 import React from "react";
 
 const FounderPage = () => {
     return (
         <div>
-            <Header />
+
             <div className="my-10 py-10 bg-gradient-to-r from-blue-900 to-indigo-900 text-white flex items-center justify-center p-5">
                 <div className="max-w-4xl w-full bg-gray-800 p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:scale-105">
                     {/* প্রতিষ্ঠাতার ছবি */}
@@ -41,19 +38,6 @@ const FounderPage = () => {
                         </div>
                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                     {/* সংক্ষিপ্ত বর্ণনা */}
                     <div className="mt-8 text-center">
                         <p className="text-lg text-yellow-300 font-semibold">
@@ -62,7 +46,7 @@ const FounderPage = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
+
         </div>
     );
 };

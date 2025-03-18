@@ -1,11 +1,12 @@
+import { GetLoginUser } from '@/@backend/getLoginUser'
 import Footer from '@/components/Layouts/Footer'
 import Header from '@/components/Layouts/Header'
 import React from 'react'
 
-type Props = {}
 
-const page = (props: Props) => {
 
+const page =async () => {
+   const {User}=await GetLoginUser()
     const tuitionFees = [
         { grade: "প্রি প্লে থেকে নার্সারি", monthlyFee: "৫০০ টাকা", dayCare: "১০০০ টাকা", residentialFee: "৪০০০" },
         { grade: "প্রথম - তৃতীয় শ্রেণী", monthlyFee: "৮০০ টাকা", dayCare: "১২০০ টাকা", residentialFee: "৪,৫০০ টাকা" },
@@ -34,7 +35,7 @@ const page = (props: Props) => {
     ];
     return (
         <div>
-            <Header />
+            <Header LoginUser={User} />
             <div>
                 <div className="w-[90%] lg:max-w-7xl mx-auto my-10">
                     {/* Header Section */}

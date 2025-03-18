@@ -12,6 +12,8 @@ import { IoHomeOutline } from "react-icons/io5";
 import AllStudent from "@/components/addStudent/AllStudent";
 import TeacherForm from "@/components/addTeacher/AddTeacher";
 import AllTeacher from "@/components/addTeacher/AllTeacher";
+import { RiNotificationSnoozeLine } from "react-icons/ri";
+import AllNotices from "@/components/Notice/Notice";
 
 type Props = {
   LoginUser: any
@@ -99,6 +101,16 @@ const Dashboard = ({ LoginUser }: Props) => {
             <BookOpen size={20} />
             <span>সকল শিক্ষক</span>
           </div>
+
+          <div
+            onClick={() => setActive(5)}
+            className="flex items-center space-x-3 p-3 hover:bg-gray-700 rounded-md transition duration-200 cursor-pointer"
+          >
+            <RiNotificationSnoozeLine size={20} />
+            <span>অ্যাড নোটিশ</span>
+          </div>
+
+
           <Link href={"/"}
 
             className="flex items-center space-x-3 p-3 hover:bg-gray-700 rounded-md transition duration-200"
@@ -141,6 +153,11 @@ const Dashboard = ({ LoginUser }: Props) => {
 
         {Active === 4 && (
           <AllTeacher />
+        )}
+
+
+        {Active === 5 && (
+          <AllNotices />
         )}
 
 

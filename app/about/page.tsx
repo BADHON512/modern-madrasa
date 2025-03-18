@@ -1,3 +1,4 @@
+import { GetLoginUser } from '@/@backend/getLoginUser'
 import FounderPage from '@/components/FounderPage'
 import Footer from '@/components/Layouts/Footer'
 import Header from '@/components/Layouts/Header'
@@ -5,10 +6,11 @@ import React from 'react'
 
 type Props = {}
 
-const page = (props: Props) => {
+const page =async (props: Props) => {
+    const {User}=await GetLoginUser()
     return (
         <div>
-            <Header/>
+            <Header LoginUser={User}/>
             <div className="max-w-7xl mx-auto px-5 py-10">
                 {/* Header Section */}
                 <div className="text-center mb-10">
