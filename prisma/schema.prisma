@@ -39,3 +39,34 @@ model Notice {
   content   String
   createdAt DateTime @default(now())
 }
+
+model Student {
+  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  name               String
+  className          String
+  guardianName       String?
+  contact            String?
+  address            String?
+  registration       String
+  registrationNumber String  @unique
+  avatar             Json
+  dateOfBirth        String
+  gender             String?
+  nationality        String?
+  religion           String?
+  bloodGroup         String?
+  emergencyContact   String?
+
+  createdAt DateTime @default(now())
+}
+
+model Teacher {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  contact       String?
+  avatar        Json
+  gender        String?
+  address       String?
+  qualification String?
+  createdAt     DateTime @default(now())
+}

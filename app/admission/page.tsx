@@ -1,8 +1,10 @@
 "use client";
 
+
+import { GetLoginUser } from "@/@backend/getLoginUser";
 import Footer from "@/components/Layouts/Footer";
 import Header from "@/components/Layouts/Header";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const AdmissionPage = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +15,7 @@ const AdmissionPage = () => {
     address: "",
     documents: null,
   });
-
+const [User,setUser]=useState()
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
@@ -28,9 +30,19 @@ const AdmissionPage = () => {
     alert("আপনার আবেদন জমা হয়েছে!");
   };
 
+  useEffect(() => {
+    async function Fetcher() {
+      const {User}=await GetLoginUser()
+      setUser(User)
+    }
+
+    Fetcher()
+  }, [])
+  
+
   return (
     <div>
-      <Header />
+      <Header LoginUser={User} />
       <div className="min-h-screen bg-gray-900 text-white p-5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* বাম সাইডে ফর্ম */}
