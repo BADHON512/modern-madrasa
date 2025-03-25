@@ -41,7 +41,7 @@ export default function SignupPage() {
   
     }
     e.preventDefault();
-    console.log(form)
+
    const { error,message} = await SignUpAdmin({
       name: form.fullName,
       email: form.email,
