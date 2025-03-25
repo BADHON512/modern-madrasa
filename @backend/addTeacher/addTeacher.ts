@@ -41,7 +41,7 @@ export async function AddTeacher({
 
     return { statusCode:200, teacher, message: "Teacher added successful", };
   } catch (error) {
-    console.log(error)
+ 
     return { error: error || "Internal server error", statusCode: 500 };
   }
 }

@@ -73,7 +73,7 @@ export async function PostStudent({
 
     return { message: "Student added successfully", statusCode: 200, student };
   } catch (error) {
-    console.log(error)
+
     return { error: error || "Internal server error", statusCode: 500 };
   }
 }

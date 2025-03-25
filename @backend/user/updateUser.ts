@@ -49,7 +49,7 @@ export async function UpdateProfile({
         try {
           await cloudinary.uploader.destroy(avatarData.public_id);
         } catch (error) {
-          console.log("Error deleting old avatar:", error);
+  
         }
       }
 
@@ -103,7 +103,7 @@ export async function UpdateProfile({
       updateUser,
     };
   } catch (error: any) {
-    console.log(error);
+
     return { error: "internal server error", statusCode: 500 };
   }
 }

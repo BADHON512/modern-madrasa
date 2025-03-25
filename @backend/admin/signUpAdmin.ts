@@ -65,7 +65,7 @@ export async function SignUpAdmin({
 
     return { message: "SignUp successfully", User };
   } catch (error) {
-    console.error("Signup Error:", error);
+
     return { error: "Internal server error", statusCode: 500 };
   }
 }

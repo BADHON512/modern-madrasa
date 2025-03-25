@@ -5,11 +5,10 @@ export function middleware(request: NextRequest) {
   const { cookies } = request;
   const authToken = cookies.get("session");
   const { pathname } = new URL(request.url);
-  console.log(authToken)
 
   const data = JSON?.parse(authToken?.value || "{}");
 
-  console.log(data.role);
+
 
   // 🔹 সুপার অ্যাডমিন না হলে '/admin/dashboard' থেকে হোমপেজে পাঠাবে
   if (pathname.startsWith("/admin/dashboard") && data.role !== "super_admin") {
