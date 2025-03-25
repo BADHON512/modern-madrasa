@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { toast } from "react-hot-toast";
-import axios from "axios";
 import { UpdateProfile } from "@/@backend/user/updateUser";
 import { LogOut } from "@/@backend/admin/logOutAdmin";
 import { useRouter } from "next/navigation";
@@ -12,13 +11,13 @@ type Props = {
 }
 const ProfilePage = ({ LoginUser }: Props) => {
   const [form, setForm] = useState({
-    name: LoginUser.name,
-    className: LoginUser.className || "",
-    guardianName: LoginUser.guardianName || "",
-    contact: LoginUser.contact || "",
-    address: LoginUser.address || "",
+    name: LoginUser?.name,
+    className: LoginUser?.className || "",
+    guardianName: LoginUser?.guardianName || "",
+    contact: LoginUser?.contact || "",
+    address: LoginUser?.address || "",
   });
-  const [avatar, setAvatar] = useState(LoginUser.avatar.url);
+  const [avatar, setAvatar] = useState(LoginUser?.avatar.url);
  const router =useRouter()
 
   const handleChange = (e) => {
@@ -100,7 +99,7 @@ const ProfilePage = ({ LoginUser }: Props) => {
 
         <input type="text" name="guardianName" value={form.guardianName} onChange={handleChange} className="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white" placeholder="Guardian Name" />
         <input type="text" name="contact" value={form.contact} onChange={handleChange} className="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white" placeholder="Contact" />
-        <textarea type="text" name="address" value={form.address} onChange={handleChange} className="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white" placeholder="Address" />
+        <textarea name="address" value={form.address} onChange={handleChange} className="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white" placeholder="Address" />
         <button type="submit" className="w-full cursor-pointer p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold" >Update your profile</button>
       </form>
       <button

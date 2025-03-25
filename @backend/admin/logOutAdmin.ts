@@ -8,6 +8,7 @@ export async function LogOut() {
     cookieStore.delete("session");
     return { message: "Logged out successfully", statusCode: 200 };
   } catch (error) {
+    console.log(error)
     return { error: error || "Internal server error", status: 500 };
   }
 }
