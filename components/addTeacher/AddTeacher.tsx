@@ -64,8 +64,10 @@ const TeacherForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-gray-800 p-6 rounded-lg shadow-md text-white mt-10">
-      <h2 className="text-xl font-semibold text-green-400 mb-4">Add Teacher</h2>
+  <div className="">
+    <h1 className="text-center mt-20 text-2xl md:text-3xl lg:text-5xl text-[#4eff37]">শিক্ষক যোগ করুন</h1>
+      <div className="max-w-md mx-auto bg-gray-800 p-6 rounded-lg shadow-md text-white mt-10">
+ 
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block mb-1">Name:</label>
@@ -127,7 +129,7 @@ const TeacherForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="avatar" className=" py-1 px-3 rounded-md bg-sky-500">Upload Avatar</label>
+          <label htmlFor="avatar" className=" py-3 px-3 my-2 rounded-md bg-sky-500">Upload Avatar</label>
           <input id="avatar" type="file" onChange={handleImageChange} className="w-full text-gray-300 hidden" />
           {teacherData.avatar && (
             <img src={teacherData.avatar} alt="Avatar" className="mt-2 w-20 h-20 rounded-full" />
@@ -135,12 +137,13 @@ const TeacherForm = () => {
         </div>
         <button
           type="submit"
-          className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded w-full cursor-pointer"
+          className="bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded w-full cursor-pointer"
         >
           Submit
         </button>
       </form>
     </div>
+  </div>
   );
 };
 

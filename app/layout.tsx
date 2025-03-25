@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: "https://your-website-url.com", // আপনার সাইটের URL দিন
     images: [
       {
-        url: "/path-to-your-image.jpg", // ইমেজ URL
+        url: "https://res.cloudinary.com/dwicbvoi2/image/upload/v1742917088/logo_ccjcjz.jpg", // ইমেজ URL
         width: 1200, // ইমেজের প্রস্থ
         height: 630, // ইমেজের উচ্চতা
         alt: "Darul Ihsan Cadet Madrasah Cover Image", // ইমেজের বর্ণনা
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image", // টুইটারে বড় চিত্র সহ পোস্ট হবে
     title: "Darul Ihsan Cadet Madrasah",
     description: "Darul Ihsan Cadet Madrasah is a leading educational institution focused on academic excellence and moral development.",
-    images: ["/path-to-your-image.jpg"], // টুইটারে ব্যবহারের জন্য ইমেজ লিংক
+    images: ["https://res.cloudinary.com/dwicbvoi2/image/upload/v1742917088/logo_ccjcjz.jpg"],
   },
 };
 
@@ -57,7 +57,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Toaster position="bottom-right" reverseOrder={false}/>
+        <Toaster position="bottom-right" reverseOrder={false} />
         {children}
       </body>
     </html>
