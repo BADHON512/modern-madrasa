@@ -5,8 +5,8 @@ import React from 'react'
 
 
 
-const page =async () => {
-   const {User}=await GetLoginUser()
+const page = async () => {
+    const { User } = await GetLoginUser()
     const tuitionFees = [
         { grade: "প্রি প্লে থেকে নার্সারি", monthlyFee: "৫০০ টাকা", dayCare: "১০০০ টাকা", residentialFee: "৪০০০" },
         { grade: "প্রথম - তৃতীয় শ্রেণী", monthlyFee: "৮০০ টাকা", dayCare: "১২০০ টাকা", residentialFee: "৪,৫০০ টাকা" },
@@ -73,57 +73,134 @@ const page =async () => {
                 </div>
 
                 <div className="w-[90%] lg:max-w-7xl mx-auto my-10">
-                <div className="flex flex-col md:flex-row md:gap-6">
-                    <div className="max-w-4xl md:w-1/2 mx-auto p-6 shadow-lg rounded-lg mt-10 bg-white">
-                        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-4">ভর্তি ফি</h2>
-                        <p className="text-center mb-8 text-2xl text-gray-600">
-                            প্রি-প্লে থেকে তৃতীয় শ্রেণি পর্যন্ত:
-                        </p>
-                        <div className="overflow-x-auto">
-                            <table className="w-full border border-gray-300">
-                                <thead>
-                                    <tr className="bg-blue-500 text-white">
-                                        <th className="p-3 text-left">বিবরণ</th>
-                                        <th className="p-3 text-left">টাকার পরিমাণ</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {fees.map((fee, index) => (
-                                        <tr key={index} className="border-b border-gray-300">
-                                            <td className="p-3 text-gray-700">{fee.description}</td>
-                                            <td className="p-3 text-gray-700">{fee.amount}</td>
+                    <div className="flex flex-col md:flex-row md:gap-6">
+                        <div className="max-w-4xl md:w-1/2 mx-auto p-6 shadow-lg rounded-lg mt-10 bg-white">
+                            <h2 className="text-3xl font-semibold text-center text-gray-800 mb-4">ভর্তি ফি</h2>
+                            <p className="text-center mb-8 text-2xl text-gray-600">
+                                প্রি-প্লে থেকে তৃতীয় শ্রেণি পর্যন্ত:
+                            </p>
+                            <div className="overflow-x-auto">
+                                <table className="w-full border border-gray-300">
+                                    <thead>
+                                        <tr className="bg-blue-500 text-white">
+                                            <th className="p-3 text-left">বিবরণ</th>
+                                            <th className="p-3 text-left">টাকার পরিমাণ</th>
                                         </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        {fees.map((fee, index) => (
+                                            <tr key={index} className="border-b border-gray-300">
+                                                <td className="p-3 text-gray-700">{fee.description}</td>
+                                                <td className="p-3 text-gray-700">{fee.amount}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="max-w-4xl md:w-1/2 mx-auto p-6 shadow-lg rounded-lg mt-10 bg-white">
-                        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-4">তৃতীয় শ্রেণী থেকে অন্যান্য সকল শ্রেণী</h2>
-                        <div className="overflow-x-auto">
-                            <table className="w-full border border-gray-300">
-                                <thead>
-                                    <tr className="bg-[#26c054] text-white">
-                                        <th className="p-3 border">বিবরণ</th>
-                                        <th className="p-3 border">আবাসিক</th>
-                                        <th className="p-3 border">অনাবাসিক</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {data.map((item, index) => (
-                                        <tr key={index} className="text-center border">
-                                            <td className="p-3 border text-gray-700">{item.description}</td>
-                                            <td className="p-3 border text-gray-700">{item.residential}</td>
-                                            <td className="p-3 border text-gray-700">{item.nonResidential || "-"}</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div className="max-w-4xl md:w-1/2 mx-auto p-6 shadow-lg rounded-lg mt-10 bg-white">
+                            <h2 className="text-3xl font-semibold text-center text-gray-800 mb-4">তৃতীয় শ্রেণী থেকে অন্যান্য সকল শ্রেণী</h2>
+                            <div className="overflow-x-auto">
+                                <table className="w-full border border-gray-300">
+                                    <thead>
+                                        <tr className="bg-[#26c054] text-white">
+                                            <th className="p-3 border">বিবরণ</th>
+                                            <th className="p-3 border">আবাসিক</th>
+                                            <th className="p-3 border">অনাবাসিক</th>
                                         </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        {data.map((item, index) => (
+                                            <tr key={index} className="text-center border">
+                                                <td className="p-3 border text-gray-700">{item.description}</td>
+                                                <td className="p-3 border text-gray-700">{item.residential}</td>
+                                                <td className="p-3 border text-gray-700">{item.nonResidential || "-"}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+
+
+
+
+
+                <div className="max-w-7xl mx-auto px-4 py-10">
+      <h1 className="text-3xl font-bold text-center text-gray-100 mb-6">
+        📌 দৈনিক খাবার রুটিন
+      </h1>
+      <p className="text-gray-100 text-center mb-8">
+        আমাদের একাডেমিতে দৈনিক খাবারের রুটিন নিম্নরূপ:
+      </p>
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse border border-gray-300">
+          <thead>
+            <tr className="bg-blue-500 text-white">
+              <th className="border border-gray-300 px-4 py-2">বার</th>
+              <th className="border border-gray-300 px-4 py-2">🍽️ সকাল</th>
+              <th className="border border-gray-300 px-4 py-2">🍛 দুপুর</th>
+              <th className="border border-gray-300 px-4 py-2">🌙 রাত</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["শনিবার", "গোস্ত খিচুরী", "ভাত, মাছ, ডাল", "ভাত, মুড়িঘন্ট, ডাল"],
+              ["রবিবার", "ভাত, ভর্তা, ডাল", "ভাত, মাছ, ডাল", "ভাত, ডিম, ডাল"],
+              ["সোমবার", "ভাত, ভাজি, ডাল", "ভাত, গোড়, ডাল", "ভাত, মুড়িঘন্ট, দুধ"],
+              ["মঙ্গলবার", "সবজি খিচুরী", "ভাত, মাছ, ডাল", "ভাত, ডিম, ডাল"],
+              ["বুধবার", "ভাত, ভাজি, ডাল", "ভাত, গোস্ত, ডাল", "ভাত, ভর্তা, ডাল"],
+              ["বৃহস্পতিবার", "ভোনা খিচুরী", "ভাত, ডিম, ডাল", "ভাত, গোস্ত, ডাল"],
+              ["শুক্রবার", "ভাত, মাছ, শাক", "বিরিয়ানী/ পোলাউ", "ভাত, ভর্তা, ডাল"],
+            ].map((day, index) => (
+              <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-gray-50"}>
+                {day.map((item, i) => (
+                  <td key={i} className="border border-gray-300 px-4 py-2 text-black text-center">
+                    {item}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-gray-300 mt-4">
+        ⚠️ বি: দ্র: সার্বিক পরিস্থিতি বিবেচনায় রুটিন সামান্য পরিবর্তন হতে পারে।
+      </p>
+    </div>
+
+
+
+
+
+
 
                 <div className="max-w-7xl mx-auto px-4 py-10">
                     <h1 className="text-3xl font-bold text-center text-gray-100 mb-6">

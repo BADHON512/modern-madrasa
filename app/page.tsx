@@ -1,4 +1,5 @@
 import { GetLoginUser } from '@/@backend/getLoginUser'
+import BranchSection from '@/components/Branch'
 import Hero from '@/components/Hero/Hero'
 import Gallery from '@/components/Home/Gallary'
 import GoogleMap from '@/components/Home/GoogleMap'
@@ -20,6 +21,7 @@ console.log(LoginUser.User)
       <Hero />
       <Introduction />
        <WhyChooseUs/>
+       <BranchSection/>
       <Gallery />
       <VideoPlayer />
       <GoogleMap />

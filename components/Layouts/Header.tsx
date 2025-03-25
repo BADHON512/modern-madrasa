@@ -34,7 +34,7 @@ const Header = ({ LoginUser }: Props) => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo and Name */}
         <Link href="/" className="text-xl font-bold flex items-center">
-          <Image src={"https://res.cloudinary.com/dfng3w9jm/image/upload/v1741757437/483891980_1033750798673164_202715880075837876_n_x0vm9p.jpg"} height={1000} width={1000} alt='logo not found' className='w-[50px] h-[50px] rounded-full object-center' />
+          <Image src={"https://res.cloudinary.com/dwicbvoi2/image/upload/v1742917088/logo_ccjcjz.jpg"} height={1000} width={1000} alt='logo not found' className='w-[50px] h-[50px] rounded-full object-center' />
         </Link>
 
         {/* Desktop Menu */}

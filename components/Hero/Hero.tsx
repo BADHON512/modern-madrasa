@@ -18,16 +18,16 @@ const Hero = () => {
 
   const heroImages = [
     {
-      url: "https://res.cloudinary.com/dfng3w9jm/image/upload/v1741843765/hero_3_c0zyzk.jpg",
+      url: "https://res.cloudinary.com/dwicbvoi2/image/upload/v1742913688/482215419_1091626399431457_5369641489977643119_n_xobgcl_awxqi7.jpg",
     },
     {
-      url: "https://res.cloudinary.com/dfng3w9jm/image/upload/v1741852222/482215419_1091626399431457_5369641489977643119_n_xobgcl.jpg",
+      url: "https://res.cloudinary.com/dwicbvoi2/image/upload/v1742913696/hero_3_c0zyzk_tq7xim.jpg",
     },
     {
-      url: "https://res.cloudinary.com/dfng3w9jm/image/upload/v1741843771/hero_1_immix6.jpg",
+      url: "https://res.cloudinary.com/dwicbvoi2/image/upload/v1742913695/hero_5_d7yyea_gctfyc.jpg",
     },
     {
-      url: "https://res.cloudinary.com/dfng3w9jm/image/upload/v1741843767/hero_5_d7yyea.jpg",
+      url: "https://res.cloudinary.com/dwicbvoi2/image/upload/v1742913694/hero_1_immix6_caa9o5.jpg",
     },
   ];
 

@@ -32,7 +32,7 @@ const Introduction = (props: Props) => {
                 {/* Image Section */}
                 <div className="w-full md:w-1/2">
                     <Image
-                        src="https://res.cloudinary.com/dfng3w9jm/image/upload/v1741719327/482410565_2287225808339186_1109085491186225578_n_btrtwr.jpg"
+                        src="https://res.cloudinary.com/dwicbvoi2/image/upload/v1742912851/482410565_2287225808339186_1109085491186225578_n_btrtwr_mznsbb.webp"
                         alt="image not found"
                         width={1000}
                         height={1000}

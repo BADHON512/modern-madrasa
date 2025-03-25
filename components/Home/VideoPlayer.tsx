@@ -1,17 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import ReactPlayer from "react-player";
+
 import { Dialog } from "@headlessui/react";
 import { FaPlay } from "react-icons/fa";
 type Props = {};
 
 const VideoPlayer = (props: Props) => {
     const videos = [
-        "https://res.cloudinary.com/dfng3w9jm/video/upload/v1741846929/Snapsave.app_-GPl_gsc6kv.mp4",
-        "https://res.cloudinary.com/dfng3w9jm/video/upload/v1741713230/484140834_29591524293779677_8439933459747333002_n_p3656l.mp4",
-        "https://res.cloudinary.com/dfng3w9jm/video/upload/v1741713228/483760628_8499481046820959_1101870668282696666_n_kcg0pn.mp4",
-        "https://res.cloudinary.com/dfng3w9jm/video/upload/v1741713228/483351465_9101839493218412_8682514123200467906_n_d6hehx.mp4",
+        "https://res.cloudinary.com/dwicbvoi2/video/upload/v1742916690/Snapsave.app_-GPl_gsc6kv_ywyzd7.mp4",
+        "https://res.cloudinary.com/dwicbvoi2/video/upload/v1742916686/483351465_9101839493218412_8682514123200467906_n_d6hehx_a6hmzb.mp4",
+        "https://res.cloudinary.com/dwicbvoi2/video/upload/v1742916687/484140834_29591524293779677_8439933459747333002_n_p3656l_dj9ygm.mp4",
+        "https://res.cloudinary.com/dwicbvoi2/video/upload/v1742916686/483760628_8499481046820959_1101870668282696666_n_kcg0pn_uw5sjo.mp4",
     ];
 
     const [open, setOpen] = useState(false);

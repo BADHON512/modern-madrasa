@@ -36,7 +36,7 @@ export default function LoginPage() {
         </p>
         {/* Logo */}
         <div className="flex justify-center mb-6">
-          <Image src="https://res.cloudinary.com/dfng3w9jm/image/upload/v1741757437/483891980_1033750798673164_202715880075837876_n_x0vm9p.jpg" alt="Madrasah Logo" width={80} height={80} className="rounded-full object-center" />
+          <Image src="https://res.cloudinary.com/dwicbvoi2/image/upload/v1742917088/logo_ccjcjz.jpg" alt="Madrasah Logo" width={80} height={80} className="rounded-full object-center" />
         </div>
         
         <h2 className="text-2xl font-semibold mb-4">লগইন করুন</h2>
