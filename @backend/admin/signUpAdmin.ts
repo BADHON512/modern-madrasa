@@ -26,7 +26,7 @@ export async function SignUpAdmin({
       });
 
       if (existingSuperAdmin) {
-        return { message: "Super Admin already exists", statusCode: 400 };
+        return { error: "Super Admin already exists", statusCode: 400 };
       }
     }
 
@@ -65,7 +65,7 @@ export async function SignUpAdmin({
 
     return { message: "SignUp successfully", User };
   } catch (error) {
-
+console.log(error)
     return { error: "Internal server error", statusCode: 500 };
   }
 }

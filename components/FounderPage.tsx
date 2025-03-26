@@ -13,7 +13,7 @@ const FounderPage = () => {
                         <Image
                             height={1000}
                             width={1000}
-                            src="https://res.cloudinary.com/dfng3w9jm/image/upload/v1741847749/483593369_1036102368327903_8000179895354208126_n_c9rkev.jpg" // এখানে তোমার প্রতিষ্ঠাতার ছবি যুক্ত করো
+                            src="https://res.cloudinary.com/dfng3w9jm/image/upload/v1742188442/madrash/sdmicuptjgmnpropadpk.jpg" // এখানে তোমার প্রতিষ্ঠাতার ছবি যুক্ত করো
                             alt="Founder Image"
                             className="w-32 h-32 rounded-full border-4 border-green-400 shadow-xl"
                         />
