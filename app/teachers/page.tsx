@@ -8,7 +8,7 @@ const teachers = [
     name: 'কাজী মোঃ হাফিজ উদ্দিন-লিমন',
     subject: 'হাদিস ও তাফসির',
     qualification: 'ইসলামিক স্টাডিজ (ঢাকা বিশ্ববিদ্যালয়)',
-    image: 'https://res.cloudinary.com/dfng3w9jm/image/upload/v1741847749/483593369_1036102368327903_8000179895354208126_n_c9rkev.jpg'
+    image: 'https://res.cloudinary.com/dfng3w9jm/image/upload/v1742188442/madrash/sdmicuptjgmnpropadpk.jpg'
   },
 
 
