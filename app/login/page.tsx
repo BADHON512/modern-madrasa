@@ -23,8 +23,7 @@ export default function LoginPage() {
     router.push("/admin/dashboard")
   }
   if(error){
-    toast.error(error:any)
-    console.log(error)
+    toast.error(error)
   }
   };
   
